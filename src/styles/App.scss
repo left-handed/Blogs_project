@@ -1,0 +1,169 @@
+.App {
+  display: flex;
+  display: -webkit-flex;
+  .left-box{
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .left-box, .right-box{
+    margin-top: 60px;
+    width: 50%;
+    min-width: 500px;
+    .left-box-center{
+      width: 50%;
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: column;
+      align-items: center;
+      .name-img{
+        img{
+          width: 4em;
+          height: 4em;
+          border-radius: 2em;
+        }
+      }
+      p{
+        padding: 8px; 
+      }
+      .addres{
+        a{
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          margin: 0 12px;
+        }
+        .github{
+          background: url('../images/svg/github.svg');
+          background-size: 24px 24px;
+        }
+        .weibo{
+          background: url('../images/svg/weibo.svg');
+          background-size: 24px 24px;
+        }
+      }
+      .post-box{
+        .post-box-e{
+          display: -webkit-flex;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 14px;
+          i{
+            display: inline-block;
+            background: url('../images/svg/youxiang.svg') no-repeat 0 0px;
+            width: 24px;
+            height: 24px;
+            background-size: 24px 24px;
+          }
+        }
+      }
+      .nxet-box{
+        .nxet-but{
+          display: inline-block;
+          font-size: 16px;
+          margin-top: 120px;
+          text-align: center;
+          line-height: 28px;
+          width: 280px;
+          height: 44px;
+          background-color: #fff;
+          border: 4px solid #D0CDCD;
+          position: relative;
+          cursor: pointer;
+          &::after{
+            content: '';
+            position: absolute;
+            border: 4px solid #e1e1e1;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            transition-property:top, left, bottom, right;
+            -moz-transition-property: top, left, bottom, right; /* Firefox 4 */
+            -webkit-transition-property:top, left, bottom, right; /* Safari 和 Chrome */
+            -o-transition-property:top, left, bottom, right; /* Opera */
+            transition-duration: .6s;
+            -moz-transition-duration: .6s; /* Firefox 4 */
+            -webkit-transition-duration: .6s; /* Safari 和 Chrome */
+            -o-transition-duration: .6s; /* Opera */
+          }
+          &:hover{
+            &::after{
+              content: '';
+              top: -10px;
+              left: -10px;
+              bottom: -10px;
+              right: -10px;
+            }
+          }
+        }
+      }
+    }
+    .right-box-center{
+      width: 840px;
+      height: 720px;
+      position: relative;
+      right: 20px;
+      .banner-img{
+        width: 100%;
+        li{
+          width: 100%;
+          float: right;
+          img{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            filter:alpha(opacity=0);
+            transition: opacity 2s;
+            -ms-transition:opacity 2s; 	/* IE 9 */
+            -moz-transition:opacity 2s; 	/* Firefox */
+            -webkit-transition:opacity 2s; /* Safari 和 Chrome */
+            -o-transition:opacity 2s; 	/* Opera */
+          }
+          .show-img{
+            filter:alpha(opacity=1);
+            opacity: 1;
+          }
+        }
+      }
+      .right-box-center-index{
+        position: absolute;
+        bottom: 36px;
+        left: 42%;
+        li{
+          float: left;
+          margin: 0 10px;
+          cursor: pointer;
+          &::after{
+            content: ' ';
+            display: inline-block;
+            width: 65px;
+            height: 15px;
+            border: 2px solid #fff;
+            border-radius: 32px 0;
+          }
+        }
+        .current-dom{
+          &::after{
+            border-color: #EA7686;
+          }
+        }
+      }
+      &::after{
+        content: '';
+        height: 100%;
+        width: 30px;
+        background: url('../images/bg.png') repeat-y 0 0;
+        position: absolute;
+        right: 0;
+        left: 0;
+        z-index: 1;
+      }
+    }
+  }
+}
